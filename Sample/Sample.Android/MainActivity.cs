@@ -26,7 +26,8 @@ using DelsysAPI.Transforms;
 using DelsysAPI.Channels.Transform;
 using System.Reflection;
 
-namespace Sample.Droid
+namespace AndroidSample
+
 {
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
@@ -183,16 +184,16 @@ namespace Sample.Droid
 
             // Load your license and key files
             // This tutorial assumes you have them contained in embedded resources named PublicKey.lic and License.lic, as part of
-            // a solution with an output executable called BasicExample.
+            // a solution with an output executable called AndroidSample.
             var assembly = Assembly.GetExecutingAssembly();
             string key;
-            using (Stream stream = assembly.GetManifestResourceStream("Sample.Droid.PublicKey.lic"))
+            using (Stream stream = assembly.GetManifestResourceStream("AndroidSample.PublicKey.lic")) // Change the name of the .lic file accordingly
             {
                 StreamReader sr = new StreamReader(stream);
                 key = sr.ReadLine();
             }
             string lic;
-            using (Stream stream = assembly.GetManifestResourceStream("Sample.Droid.License.lic"))
+            using (Stream stream = assembly.GetManifestResourceStream("AndroidSample.License.lic")) // Change the name of the .lic file accordingly
             {
                 StreamReader sr = new StreamReader(stream);
                 lic = sr.ReadToEnd();
