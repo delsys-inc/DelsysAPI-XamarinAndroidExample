@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\10\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\11\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\12\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\13\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\14\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\15\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\16\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\17\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\18\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\19\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\8\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\9\jl\support-annotations.jar</Jar>
+  </Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\0\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\13\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\16\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\17\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\18\jl\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\70\lp\0\jl\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\0.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\13.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\16.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\17.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\chris\source\repos\Sample\Sample\Sample.Android\obj\Debug\70\lp\18.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>
