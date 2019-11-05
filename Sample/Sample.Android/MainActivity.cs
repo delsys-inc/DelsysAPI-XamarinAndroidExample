@@ -60,6 +60,11 @@ namespace AndroidSample
         int TotalLostPackets = 0;
         int TotalDataPoints = 0;
 
+        /// <summary>
+        /// Buttons on device are only a visual representation of automation.
+        /// If buttons are needed, uncomment and insert (object sender, EventArgs e) into the commeneted out methods parameters.
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -70,16 +75,16 @@ namespace AndroidSample
             SetSupportActionBar(toolbar);
 
             ScanButton = FindViewById<Button>(Resource.Id.btn_Scan);
-            ScanButton.Click += clk_Scan;
+            //ScanButton.Click += clk_Scan;
 
             ArmButton = FindViewById<Button>(Resource.Id.btn_Arm);
-            ArmButton.Click += clk_Arm;
+            //ArmButton.Click += clk_Arm;
 
             StreamButton = FindViewById<Button>(Resource.Id.btn_Stream);
-            StreamButton.Click += clk_Start;
+            //StreamButton.Click += clk_Start;
 
             StopButton = FindViewById<Button>(Resource.Id.btn_Stop);
-            StopButton.Click += clk_Stop;
+            //StopButton.Click += clk_Stop;
 
             StreamButton.Enabled = false;
             ArmButton.Enabled = false;
@@ -91,11 +96,39 @@ namespace AndroidSample
             InitializeDataSource();
         }
 
+        protected async override void OnStart()
+        {
+            base.OnStart();
+
+            await somethingAsync();
+
+        }
+
+        /// <summary>
+        /// Method to create automation of scanning, arming and streaming of sensors.
+        /// Delays are set to mimic human delay.
+        /// </summary>
+        /// <returns></returns>
+        private async Task somethingAsync()
+        {
+            clk_Scan();
+            await Task.Delay(15000);
+
+            clk_Arm();
+            await Task.Delay(5000);
+
+            clk_Start();
+            await Task.Delay(30000);
+
+            clk_Stop();
+        }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
+
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
@@ -128,7 +161,7 @@ namespace AndroidSample
             }
         }
 
-        public void clk_Start(object sender, EventArgs e)
+        public void clk_Start()
         {
             // The pipeline must be reconfigured before it can be started again.
             ConfigurePipeline();
@@ -139,7 +172,7 @@ namespace AndroidSample
             StopButton.Enabled = true;
         }
 
-        public void clk_Arm(object sender, EventArgs e)
+        public void clk_Arm()
         {
             // Select every component we found and didn't filter out.
             foreach (var component in BTPipeline.TrignoBtManager.Components)
@@ -154,7 +187,7 @@ namespace AndroidSample
             StopButton.Enabled = false;
         }
 
-        public void clk_Scan(object sender, EventArgs e)
+        public void clk_Scan()
         {
             StreamButton.Enabled = false;
             ArmButton.Enabled = false;
@@ -164,7 +197,7 @@ namespace AndroidSample
             BTPipeline.Scan();
         }
 
-        public void clk_Stop(object sender, EventArgs e)
+        public void clk_Stop()
         {
             BTPipeline.Stop();
             StreamButton.Enabled = true;
@@ -187,7 +220,7 @@ namespace AndroidSample
             // a solution with an output executable called AndroidSample.
             var assembly = Assembly.GetExecutingAssembly();
             string key;
-            using (Stream stream = assembly.GetManifestResourceStream("AndroidSample.PublicKey.lic")) // Change the name of the .lic file accordingly
+            using (Stream stream = assembly.GetManifestResourceStream("AndroidSample.APIKey.lic")) // Change the name of the .lic file accordingly
             {
                 StreamReader sr = new StreamReader(stream);
                 key = sr.ReadLine();
@@ -354,6 +387,12 @@ namespace AndroidSample
             });
         }
 
+        /// <summary>
+        /// Data collection complete, stores each data point into a csv file. 
+        /// Increments for every run.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CollectionComplete(object sender, DelsysAPI.Events.CollectionCompleteEvent e)
         {
             string path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, Android.OS.Environment.DirectoryDownloads);
@@ -381,6 +420,7 @@ namespace AndroidSample
         /// </summary>
         /// <returns></returns>
         private bool CallbacksAdded = false;
+
         private bool ConfigurePipeline()
         {
             if (PipelineController.Instance.PipelineIds[0].CurrentState == Pipeline.ProcessState.OutputsConfigured || PipelineController.Instance.PipelineIds[0].CurrentState == Pipeline.ProcessState.Armed)
@@ -430,7 +470,7 @@ namespace AndroidSample
             PipelineController.Instance.PipelineIds[0].ApplyInputConfigurations(inputConfiguration);
             var transformTopology = GenerateTransforms();//For multi Sensors
             PipelineController.Instance.PipelineIds[0].ApplyOutputConfigurations(transformTopology);
-            PipelineController.Instance.PipelineIds[0].RunTime = Double.MaxValue;
+            PipelineController.Instance.PipelineIds[0].RunTime = 20;
 
 
             return true;
